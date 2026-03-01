@@ -1,0 +1,135 @@
+.favorites-sidebar {
+  width: 320px;
+  height: 600px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.favorites-sidebar__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+  background: white;
+}
+
+.favorites-sidebar__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(26, 95, 42, 0.1);
+  padding: 10px;
+  border-radius: 12px;
+  color: var(--color-accent);
+}
+
+.favorites-sidebar__icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.favorites-sidebar__title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.favorites-sidebar__count {
+  padding: 0 20px 16px;
+  font-size: 14px;
+  color: var(--color-text-secondary);
+}
+
+.favorites-sidebar__list {
+  flex: 1;
+  overflow-y: auto;
+  background: white;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.favorites-sidebar__list::-webkit-scrollbar {
+  display: none;
+}
+
+.favorites-sidebar__item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  background: white;             
+  border-bottom: 1px solid #eee;  
+}
+
+.favorites-sidebar__item:last-child {
+  border-bottom: none;
+}
+
+.favorites-sidebar__cover,
+.favorites-sidebar__no-cover {
+  width: 56px;
+  height: 84px;
+  flex-shrink: 0;
+  border-radius: 6px;
+}
+
+.favorites-sidebar__cover {
+  object-fit: cover;
+}
+
+.favorites-sidebar__no-cover {
+  background: var(--color-placeholder);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: var(--color-text-muted);
+}
+
+.favorites-sidebar__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.favorites-sidebar__item .favorites-sidebar__title {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.favorites-sidebar__meta {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  margin-top: 4px;
+}
+
+.favorites-sidebar__remove {
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--color-heart);
+  padding: 6px;
+  display: flex;
+}
+
+.favorites-sidebar__remove svg {
+  width: 20px;
+  height: 20px;
+}
+
+.favorites-sidebar__remove:hover {
+  opacity: 0.75;
+}
+
+.favorites-sidebar__empty {
+  padding: 20px;
+  font-size: 14px;
+  color: var(--color-text-muted);
+}

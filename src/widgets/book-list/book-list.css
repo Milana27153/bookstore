@@ -1,0 +1,26 @@
+.book-list {
+  padding: var(--space-lg);
+}
+
+.book-list__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: var(--space-lg);
+}
+
+@media (min-width: 768px) {
+  .book-list__grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+}
+
+.book-list__empty,
+.book-list__state {
+  text-align: center;
+  color: var(--color-text-secondary);
+  padding: var(--space-xl);
+}
+
+.book-list__state--error {
+  color: var(--color-heart);
+}
