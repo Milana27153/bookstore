@@ -8,6 +8,11 @@ https://drive.google.com/file/d/1RBRcuH-_oAvtjem5Xs0c4NXZ8I38aYyH/view
 ## Overview
 The Library is a modern and stylish online bookstore created for book lovers. Its user-friendly interface, attractive design, and powerful functionality will help you easily find your favorite book.
 
+## Quick start
+```
+npm run dev
+```
+
 ## Features
 ***Book Search*** – Search millions of books by title or author
 

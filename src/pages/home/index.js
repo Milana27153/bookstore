@@ -22,26 +22,28 @@ export function renderHomePage() {
   const app = document.getElementById('app');
   app.innerHTML = '';
 
+  const header = renderHeader();
+  const searchPanel = renderSearchPanel(handleSearch);
+
+  app.appendChild(header);
+  app.appendChild(searchPanel);
+
   const main = document.createElement('main');
   main.className = 'layout';
 
   const content = document.createElement('div');
   content.className = 'layout__content';
 
-  const header = renderHeader();
-  const searchPanel = renderSearchPanel(handleSearch);
   const bookListContainer = document.createElement('div');
   bookListContainer.className = 'layout__books';
 
-  content.appendChild(header);
-  content.appendChild(searchPanel);
   content.appendChild(bookListContainer);
 
-  const sidebar = document.createElement('div');
-  sidebar.className = 'layout__sidebar';
+  const sidebarWrapper = document.createElement('div');
+  sidebarWrapper.className = 'layout__sidebar';
 
   main.appendChild(content);
-  main.appendChild(sidebar);
+  main.appendChild(sidebarWrapper);
 
   const footer = document.createElement('footer');
   footer.className = 'footer';
@@ -68,11 +70,45 @@ export function renderHomePage() {
     return currentBooks;
   }
 
+  const sidebarComponent = renderFavoritesSidebar(
+    getFavoritesList(),
+    handleRemoveFavorite,
+    handleToggleFavorite
+  );
+
+  sidebarWrapper.appendChild(sidebarComponent);
+
   function refreshSidebar() {
     const favorites = getFavoritesList();
-    const newSidebar = renderFavoritesSidebar(favorites, handleRemoveFavorite);
-    sidebar.innerHTML = '';
-    sidebar.appendChild(newSidebar);
+
+    const list = sidebarComponent.querySelector('.favorites-sidebar__list');
+    const count = sidebarComponent.querySelector('.favorites-sidebar__count');
+
+    if (!list || !count) return;
+
+    count.textContent =
+      favorites.length === 1
+        ? '1 book saved'
+        : `${favorites.length} books saved`;
+
+    const updatedSidebar = renderFavoritesSidebar(
+      favorites,
+      handleRemoveFavorite,
+      handleToggleFavorite
+    );
+
+    const newList = updatedSidebar.querySelector('.favorites-sidebar__list');
+    list.innerHTML = newList.innerHTML;
+
+    list.querySelectorAll('[data-action="remove"]').forEach((btn) => {
+      const item = btn.closest('.favorites-sidebar__item');
+      const bookId = item.dataset.bookId;
+      btn.addEventListener('click', () => {
+        if (confirm('Are you sure you want to remove from favorites?')) {
+          handleRemoveFavorite(bookId);
+        }
+      });
+    });
   }
 
   function handleSearch(query) {

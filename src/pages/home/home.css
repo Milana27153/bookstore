@@ -2,6 +2,11 @@
   display: flex;
   flex: 1;
   min-height: calc(100vh - 60px);
+  max-width: 1400px; 
+  margin: 40px auto 0; 
+  align-items: flex-start;
+  width: 100%;
+  padding: 0 var(--space-lg); 
 }
 
 .layout__content {
@@ -15,6 +20,9 @@
 
 .layout__sidebar {
   flex-shrink: 0;
+  align-self: flex-start;
+  position: sticky;
+  top: var(--space-lg);
 }
 
 @media (max-width: 768px) {
