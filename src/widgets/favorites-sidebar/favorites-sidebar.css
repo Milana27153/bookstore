@@ -1,0 +1,116 @@
+.favorites-sidebar {
+  background: var(--color-bg-secondary);
+  padding: var(--space-lg);
+  border-left: 1px solid var(--color-border);
+  min-width: 280px;
+}
+
+.favorites-sidebar__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.favorites-sidebar__icon {
+  display: flex;
+  color: var(--color-accent);
+}
+
+.favorites-sidebar__icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.favorites-sidebar__title {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.favorites-sidebar__count {
+  margin: var(--space-sm) 0 var(--space-md);
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+.favorites-sidebar__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.favorites-sidebar__empty {
+  padding: var(--space-md) 0;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.favorites-sidebar__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-sm);
+  background: var(--color-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+
+.favorites-sidebar__cover,
+.favorites-sidebar__no-cover {
+  width: 48px;
+  height: 72px;
+  flex-shrink: 0;
+  border-radius: 4px;
+}
+
+.favorites-sidebar__cover {
+  object-fit: cover;
+}
+
+.favorites-sidebar__no-cover {
+  background: var(--color-placeholder);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.625rem;
+  color: var(--color-text-muted);
+}
+
+.favorites-sidebar__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.favorites-sidebar__item .favorites-sidebar__title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.favorites-sidebar__meta {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+.favorites-sidebar__remove {
+  padding: var(--space-xs);
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--color-heart);
+  display: flex;
+}
+
+.favorites-sidebar__remove svg {
+  width: 20px;
+  height: 20px;
+}
+
+.favorites-sidebar__remove:hover {
+  opacity: 0.8;
+}
