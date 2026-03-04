@@ -9,7 +9,7 @@ export function renderHeader(onMenuClick) {
 
   const logo = document.createElement('a');
   logo.className = 'header__logo';
-  logo.href = '/';
+  logo.href = '#';
 
   const iconWrapper = document.createElement('span');
   iconWrapper.className = 'header__icon';
