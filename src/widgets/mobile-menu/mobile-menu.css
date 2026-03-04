@@ -1,0 +1,131 @@
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: none;
+}
+
+.mobile-menu--visible {
+  display: block;
+}
+
+.mobile-menu__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.mobile-menu__panel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 260px;
+  background: #f7f8fb;
+  box-shadow: 4px 0 16px rgba(0, 0, 0, 0.12);
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-menu__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.mobile-menu__logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mobile-menu__logo-icon {
+  display: flex;
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  background: var(--color-accent);
+  color: #ffffff;
+  padding: 6px;
+}
+
+.mobile-menu__logo-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.mobile-menu__logo-text {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #222b45;
+}
+
+.mobile-menu__close {
+  border: none;
+  background: transparent;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--color-text);
+}
+
+.mobile-menu__nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mobile-menu__item {
+  display: flex;
+}
+
+.mobile-menu__link {
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: transparent;
+  padding: 10px 8px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.mobile-menu__link--favorites {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.mobile-menu__link--favorites .mobile-menu__badge {
+  margin-left: auto;
+}
+
+.mobile-menu__link:focus-visible,
+.mobile-menu__link:hover {
+  background: #c8f0de;
+  color: var(--color-accent);
+}
+
+.mobile-menu__badge {
+  min-width: 32px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--color-accent);
+  color: #ffffff;
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+@media (min-width: 769px) {
+  .mobile-menu {
+    display: none !important;
+  }
+}
+
