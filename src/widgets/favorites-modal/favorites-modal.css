@@ -15,7 +15,7 @@
 
 .favorites-modal__panel {
   position: relative;
-  background: #ffffff;
+  background: var(--color-bg-secondary);
   border-radius: 16px;
   max-width: 420px;
   width: 90%;
@@ -38,7 +38,7 @@
   margin: 0;
   font-size: 1rem;
   font-weight: 600;
-  color: #222b45;
+  color: var(--color-text);
 }
 
 .favorites-modal__close {
@@ -52,6 +52,12 @@
 
 .favorites-modal__body {
   overflow: auto;
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
+}
+
+.favorites-modal__body::-webkit-scrollbar {
+  display: none; 
 }
 
 .favorites-modal .favorites-sidebar {
