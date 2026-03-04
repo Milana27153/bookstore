@@ -5,9 +5,11 @@
 }
 
 .header__inner {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: var(--space-md) var(--space-lg);
+  max-width: 1400px;       
+  margin: 0 auto;           
+  padding: 0 24px;      
+  height: 80px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -19,6 +21,7 @@
   gap: var(--space-md);
   text-decoration: none;   
   color: inherit;  
+  margin-left: 87px;
 }
 
 .header__icon {
@@ -52,39 +55,38 @@
 
 .header__menu-toggle {
   display: none;
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
   border: none;
-  background: var(--color-bg-secondary);
-  padding: 0;
+  background: transparent;
   cursor: pointer;
+
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .header__menu-bar {
-  display: block;
-  width: 18px;
+  width: 22px;
   height: 3px;
   border-radius: 999px;
   background: var(--color-accent-hover);
 }
 
-.header__menu-bar + .header__menu-bar {
-  margin-top: 4px;
-}
-
 @media (max-width: 768px) {
-   .header__menu-toggle {
-    width: 56px;
-    height: 56px;
+
+  .header__inner {
+    height: 64px;
+    padding: 0 16px;
+  }
+
+  .header__brand {
+    display: none;
+  }
+
+  .header__menu-toggle {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: transparent; 
-    gap: 1px;
-    transition: all 0.3s ease;
   }
 
   .header__menu-toggle--floating {
@@ -97,10 +99,5 @@
     border-radius: 50%;
     box-shadow: 0 8px 24px rgba(0,0,0,0.15);
     z-index: 1000;
-  }
-
-  .header__menu-toggle--floating .header__menu-bar {
-    width: 22px;  
-    height: 4px;
   }
 }
