@@ -15,6 +15,12 @@
   justify-content: space-between;
 }
 
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
 .header__logo {
   display: flex;
   align-items: center;

@@ -21,7 +21,7 @@
   bottom: 0;
   left: 0;
   width: 260px;
-  background: #f7f8fb;
+  background: var(--color-bg-secondary);
   box-shadow: 4px 0 16px rgba(0, 0, 0, 0.12);
   padding: 24px 20px;
   display: flex;
@@ -59,7 +59,7 @@
 .mobile-menu__logo-text {
   font-weight: 600;
   font-size: 1rem;
-  color: #222b45;
+  color: var(--color-text);
 }
 
 .mobile-menu__close {
@@ -109,7 +109,7 @@
 
 .mobile-menu__link:focus-visible,
 .mobile-menu__link:hover {
-  background: #c8f0de;
+  background: rgba(255, 255, 255, 0.08);
   color: var(--color-accent);
 }
 

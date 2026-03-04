@@ -52,6 +52,8 @@
   border: var(--redius);
   font-size: 1rem;
   font-family: var(--font-sans);
+  background: #ffffff; 
+  color: #2c2c2c; 
 }
 
 .search-panel__input:focus {

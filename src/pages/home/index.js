@@ -4,6 +4,7 @@ import { renderBookListState } from '../../widgets/book-list/index.js';
 import { renderFavoritesSidebar } from '../../widgets/favorites-sidebar/index.js';
 import { renderMobileMenu } from '../../widgets/mobile-menu/index.js';
 import { openFavoritesModal } from '../../widgets/favorites-modal/index.js';
+import { createThemeSwitcher } from '../../widgets/theme-switcher/index.js';
 import { performSearch } from '../../features/search-books/index.js';
 import {
   addToFavorites,
@@ -20,12 +21,22 @@ import '../../widgets/book-card/book-card.css';
 import '../../widgets/favorites-sidebar/favorites-sidebar.css';
 import '../../widgets/mobile-menu/mobile-menu.css';
 import '../../widgets/favorites-modal/favorites-modal.css';
+import '../../widgets/theme-switcher/theme-switcher.css';
 
-export function renderHomePage() {
+export function renderHomePage(options = {}) {
+  const { initialTheme } = options;
   const app = document.getElementById('app');
   app.innerHTML = '';
 
   const header = renderHeader(handleToggleMenu);
+  const headerInner = header.querySelector('.header__inner');
+  const headerActions = header.querySelector('.header__actions');
+
+  if (headerActions) {
+    const switcher = createThemeSwitcher(initialTheme);
+    headerActions.insertBefore(switcher, headerActions.firstChild || null);
+  }
+
   app.appendChild(header);
 
   const main = document.createElement('main');
@@ -52,7 +63,16 @@ export function renderHomePage() {
 
   const footer = document.createElement('footer');
   footer.className = 'footer';
-  footer.textContent = 'Powered by Open Library';
+
+  const link = document.createElement('a');
+  link.className = 'footer__link';
+  link.href = 'https://openlibrary.org';
+  link.target = '_blank'; //Opens the link in a new tab
+  link.rel = 'noopener noreferrer'; // Prevents the new tab from accessing window.opener
+  link.textContent = 'Open Library';
+
+  footer.innerHTML = 'Powered by ';
+  footer.appendChild(link);
 
   app.appendChild(footer);
 

@@ -29,6 +29,9 @@ export function renderHeader(onMenuClick) {
   brand.append(title, tagline);
   logo.append(iconWrapper, brand);
 
+  const actions = document.createElement('div');
+  actions.className = 'header__actions';
+
   const menuButton = document.createElement('button');
   menuButton.className = 'header__menu-toggle';
   menuButton.type = 'button';
@@ -52,7 +55,8 @@ export function renderHeader(onMenuClick) {
     }
   });
 
-  inner.append(logo, menuButton);
+  actions.appendChild(menuButton);
+  inner.append(logo, actions);
   header.appendChild(inner);
 
   return header;
